@@ -133,13 +133,10 @@ func (b *DockerBuildBits) buildBash() error {
 		"cmd/kubectl",
 		"cmd/kubelet",
 		// docker image wrapped binaries
-		"cmd/cloud-controller-manager",
 		"cmd/kube-apiserver",
 		"cmd/kube-controller-manager",
 		"cmd/kube-scheduler",
 		"cmd/kube-proxy",
-		// we don't need this one, but the image build wraps it...
-		"vendor/k8s.io/kube-aggregator",
 	}
 	cmd := exec.Command(
 		"build/run.sh", "make", "all",
